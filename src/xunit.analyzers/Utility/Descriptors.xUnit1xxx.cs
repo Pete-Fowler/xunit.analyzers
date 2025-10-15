@@ -492,7 +492,14 @@ public static partial class Descriptors
 			"The member {0} referenced by MemberData is not initialized before use. Add an inline initializer or initialize the value in the static constructor."
 		);
 
-	// Placeholder for rule X1054
+	public static DiagnosticDescriptor X1054_TimeoutTestMustUseCancellationToken { get; } =
+		Diagnostic(
+			"xUnit1054",
+			"Calls to ",
+			Usage,
+			Warning,
+			"Calls to methods which accept CancellationToken should use TestContext.Current.CancellationToken to allow test cancellation to be more responsive."
+		);
 
 	// Placeholder for rule X1055
 
